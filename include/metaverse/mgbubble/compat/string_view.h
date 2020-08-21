@@ -20,19 +20,19 @@
 #ifndef MVS___STRING_VIEW__
 #define MVS___STRING_VIEW__
 
-#ifdef _WIN32
-#include <boost/utility/string_view_fwd.hpp>
-#include <boost/utility/string_view.hpp>
-#define string_view boost::string_view
+#if __cplusplus > 201402L || (defined(_MSC_VER) && _MSC_VER >= 1910)
+
+#include <string_view>
 
 #else
 
 #include <experimental/string_view>
-namespace mgbubble{
-
+namespace std {
+using string_view = std::experimental::string_view;
+}
+namespace mgbubble {
 using std::experimental::basic_string_view;
 using std::experimental::string_view;
-
 } // namespace mgbubble
 
 #endif
