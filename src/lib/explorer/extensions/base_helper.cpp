@@ -2175,7 +2175,7 @@ chain::attachment issuing_asset::populate_output_attachment(const receiver_recor
         BITCOIN_ASSERT(cert_info.has_content());
     }
 
-    return attach;
+    return std::move(attach);
 }
 
 void sending_asset::sum_payment_amount()

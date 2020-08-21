@@ -2369,7 +2369,7 @@ std::shared_ptr<did_detail::list> block_chain_impl::get_registered_dids()
         return nullptr;
 
     auto sp_blockchain_vec = database_.dids.get_blockchain_dids();
-    for (const auto &each : *sp_blockchain_vec){
+    for (const auto& each : *sp_blockchain_vec){
         if (each.get_status() == blockchain_did::address_current){
             sp_vec->emplace_back(each.get_did());
         }
