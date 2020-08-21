@@ -666,7 +666,7 @@ void block_chain_impl::fetch_block_locator(block_locator_fetch_handler handler)
                 locator);
 
         const auto indexes = block_locator_indexes(top_height);
-        for (const auto index: indexes)
+        for (const auto& index: indexes)
         {
             hash_digest hash;
             auto found = false;
