@@ -20,7 +20,7 @@
 #ifndef MVS___STRING_VIEW__
 #define MVS___STRING_VIEW__
 
-#if __cplusplus <= 201402L || (defined(_MSC_VER) && _MSC_VER < 1910)
+#if __cplusplus <= 201402L || (defined(_MSC_VER) && _MSC_VER < 1910) || (defined(__APPLE__) && __clang_major__ < 11)
 
 #include <experimental/string_view>
 namespace std {
