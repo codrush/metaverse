@@ -117,5 +117,5 @@ before_script:
           ..
 
 script:
-  - make
+  - make -j4
 

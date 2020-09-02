@@ -77,12 +77,16 @@
 namespace std {
 using string_view = std::experimental::string_view;
 }
+namespace mgbubble {
 using std::string_view;
+}
 #endif
 
 #if MVS_HAS_STD_STRING_VIEW
 #include <string_view>
+namespace mgbubble {
 using std::string_view;
+}
 #endif
 
 #endif // MVS___STRING_VIEW__
