@@ -20,17 +20,12 @@
 #ifndef MVS___STRING_VIEW__
 #define MVS___STRING_VIEW__
 
-#if __cplusplus <= 201402L || (defined(_MSC_VER) && _MSC_VER < 1910) || (defined(__APPLE__) && __clang_major__ < 11)
+#if __cplusplus <= 201402L || (defined(_MSC_VER) && _MSC_VER < 1910) || (defined(__APPLE__) && __clang_major__ < 10)
 
 #include <experimental/string_view>
 namespace std {
 using string_view = std::experimental::string_view;
 }
-namespace mgbubble {
-using std::experimental::basic_string_view;
-using std::experimental::string_view;
-} // namespace mgbubble
-
 #else
 
 #include <string_view>
