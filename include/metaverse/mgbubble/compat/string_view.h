@@ -32,4 +32,6 @@ using string_view = std::experimental::string_view;
 
 #endif
 
+using std::string_view;
+
 #endif // MVS___STRING_VIEW__

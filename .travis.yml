@@ -20,11 +20,11 @@ matrix:
             - cmake-data
             - libgmp-dev
       env:
-        - CMAKE_BUILD_TYPE=DEBUG
+        - CMAKE_BUILD_TYPE=RELEASE
         - CMAKE_C_COMPILER=clang
         - CMAKE_CXX_COMPILER=clang++
         - ENABLE_SHARED_LIBS=OFF
-        - USE_UPNP=ON
+        - USE_UPNP=OFF
 
     - os: linux
       compiler: clang
@@ -40,7 +40,7 @@ matrix:
             - cmake-data
             - libgmp-dev
       env:
-        - CMAKE_BUILD_TYPE=RELEASE
+        - CMAKE_BUILD_TYPE=DEBUG
         - CMAKE_C_COMPILER=clang
         - CMAKE_CXX_COMPILER=clang++
         - ENABLE_SHARED_LIBS=OFF
@@ -57,7 +57,7 @@ matrix:
             - g++-9
             - libgmp-dev
       env:
-        - CMAKE_BUILD_TYPE=DEBUG
+        - CMAKE_BUILD_TYPE=RELEASE
         - CMAKE_C_COMPILER=gcc-9
         - CMAKE_CXX_COMPILER=g++-9
         - ENABLE_SHARED_LIBS=OFF
@@ -73,11 +73,11 @@ matrix:
             - g++-9
             - libgmp-dev
       env:
-        - CMAKE_BUILD_TYPE=RELEASE
+        - CMAKE_BUILD_TYPE=DEBUG
         - CMAKE_C_COMPILER=gcc-9
         - CMAKE_CXX_COMPILER=g++-9
         - ENABLE_SHARED_LIBS=OFF
-        - USE_UPNP=ON
+        - USE_UPNP=OFF
 
     - os: osx
       osx_image: xcode11.6
