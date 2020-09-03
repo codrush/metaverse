@@ -21,8 +21,8 @@ matrix:
             - libgmp-dev
       env:
         - CMAKE_BUILD_TYPE=RELEASE
-        - CMAKE_C_COMPILER=clang
-        - CMAKE_CXX_COMPILER=clang++
+        - CMAKE_C_COMPILER=clang-9
+        - CMAKE_CXX_COMPILER=clang++-9
         - ENABLE_SHARED_LIBS=OFF
         - USE_UPNP=OFF
 
@@ -41,8 +41,8 @@ matrix:
             - libgmp-dev
       env:
         - CMAKE_BUILD_TYPE=DEBUG
-        - CMAKE_C_COMPILER=clang
-        - CMAKE_CXX_COMPILER=clang++
+        - CMAKE_C_COMPILER=clang-9
+        - CMAKE_CXX_COMPILER=clang++-9
         - ENABLE_SHARED_LIBS=OFF
         - USE_UPNP=ON
 
