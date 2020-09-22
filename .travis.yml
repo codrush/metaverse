@@ -6,7 +6,6 @@ dist: focal
 matrix:
   include:
     - os: linux
-      arch: arm64
       compiler: clang
       addons:
         apt:
@@ -61,7 +60,7 @@ matrix:
         - CMAKE_C_COMPILER=gcc-9
         - CMAKE_CXX_COMPILER=g++-9
         - ENABLE_SHARED_LIBS=OFF
-        - USE_UPNP=ON
+        - USE_UPNP=OFF
 
     - os: linux
       compiler: g++
@@ -77,7 +76,7 @@ matrix:
         - CMAKE_C_COMPILER=gcc-9
         - CMAKE_CXX_COMPILER=g++-9
         - ENABLE_SHARED_LIBS=OFF
-        - USE_UPNP=OFF
+        - USE_UPNP=ON
 
     - os: osx
       osx_image: xcode11.6
@@ -87,7 +86,7 @@ matrix:
         - CMAKE_C_COMPILER=clang
         - CMAKE_CXX_COMPILER=clang++
         - ENABLE_SHARED_LIBS=OFF
-        - USE_UPNP=ON
+        - USE_UPNP=OFF
 
 before_install:
   - BUILD_PACKAGES="";
@@ -117,5 +116,5 @@ before_script:
           ..
 
 script:
-  - make -j4
+  - make -j2
 
