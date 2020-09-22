@@ -52,14 +52,14 @@
 # if !defined(MVS_DISABLE_STD_EXPERIMENTAL_STRING_VIEW)
 #  if defined(__clang__)
 #   if (__cplusplus >= 201402)
-#    if __has_include(<experimental/string_view>)
-#     if (__clang_major__ < 7)
-#      define MVS_HAS_STD_EXPERIMENTAL_STRING_VIEW 1
-#     endif // if (__clang_major__ < 7)
-#    endif // __has_include(<experimental/string_view>)
 #    if __has_include(<string_view>)
 #     define MVS_HAS_STD_STRING_VIEW 1
 #    endif // __has_include(<string_view>)
+#    if __has_include(<experimental/string_view>)
+#     //if (__clang_major__ < 7)
+#      define MVS_HAS_STD_EXPERIMENTAL_STRING_VIEW 1
+#     //endif // if (__clang_major__ < 7)
+#    endif // __has_include(<experimental/string_view>)
 #   endif // (__cplusplus >= 201402)
 #  endif // defined(__clang__)
 #  if defined(__GNUC__)
@@ -80,9 +80,8 @@ using string_view = std::experimental::string_view;
 namespace mgbubble {
 using std::string_view;
 }
-#endif
 
-#if MVS_HAS_STD_STRING_VIEW
+#else //MVS_HAS_STD_STRING_VIEW
 #include <string_view>
 namespace mgbubble {
 using std::string_view;
