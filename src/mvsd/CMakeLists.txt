@@ -2,7 +2,11 @@ FILE(GLOB_RECURSE mvsd_SOURCES "*.cpp")
 
 ADD_EXECUTABLE(mvsd ${mvsd_SOURCES})
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-range-loop-construct")
+IF (APPLE)
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-range-loop-analysis")
+ELSE()
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-range-loop-construct")
+ENDIF()
 
 IF(ENABLE_SHARED_LIBS)
     ADD_DEFINITIONS(-DBCS_DLL=1)
